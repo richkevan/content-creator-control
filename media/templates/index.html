@@ -1,0 +1,204 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% tailwind_css %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body class="h-screen">
+    <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
+<div class="bg-white">
+  <div>
+    {% comment %} {% block navigation %}{% endblock navigation %} {% endcomment %}
+
+    {% block header %}{% endblock header %}
+  </div>
+
+  <div>
+    {% comment %} {% block mobile_filter %}{% endblock mobile_filter %} {% endcomment %}
+
+    {% block breadcrumb %}{% endblock breadcrumb %}
+
+    <main class="mx-auto max-w-2xl px-4 lg:max-w-7xl xl:max-w-full lg:px-8 xl:px-16">
+      {% block headline %}{% endblock headline %}
+
+      <div class="pb-24 pt-12 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
+        {% block aside %}{% endblock aside %}
+
+        <section aria-labelledby="product-heading" class="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3">
+          <h2 id="product-heading" class="sr-only">Products</h2>
+
+          <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 xl:grid-cols-3">
+            {% comment %} <div class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
+              <div class="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg" alt="Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green." class="h-full w-full object-cover object-center sm:h-full sm:w-full">
+              </div>
+              <div class="flex flex-1 flex-col space-y-2 p-4">
+                <h3 class="text-sm font-medium text-gray-900">
+                  <a href="#">
+                    <span aria-hidden="true" class="absolute inset-0"></span>
+                    Basic Tee 8-Pack
+                  </a>
+                </h3>
+                <p class="text-sm text-gray-500">Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.</p>
+                <div class="flex flex-1 flex-col justify-end">
+                  <p class="text-sm italic text-gray-500">8 colors</p>
+                  <p class="text-base font-medium text-gray-900">$256</p>
+                </div>
+              </div>
+            </div> {% endcomment %}
+            {% comment %} <div class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
+              <div class="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg" alt="Front of plain black t-shirt." class="h-full w-full object-cover object-center sm:h-full sm:w-full">
+              </div>
+              <div class="flex flex-1 flex-col space-y-2 p-4">
+                <h3 class="text-sm font-medium text-gray-900">
+                  <a href="#">
+                    <span aria-hidden="true" class="absolute inset-0"></span>
+                    Basic Tee
+                  </a>
+                </h3>
+                <p class="text-sm text-gray-500">Look like a visionary CEO and wear the same black t-shirt every day.</p>
+                <div class="flex flex-1 flex-col justify-end">
+                  <p class="text-sm italic text-gray-500">Black</p>
+                  <p class="text-base font-medium text-gray-900">$32</p>
+                </div>
+              </div>
+            </div> {% endcomment %}
+
+            <!-- More products... -->
+          </div>
+          {% block main %}{% endblock main %}
+        </section>
+      </div>
+    </main>
+
+    <footer aria-labelledby="footer-heading" class="border-t border-gray-200 bg-white">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="py-20">
+          <div class="grid grid-cols-1 md:grid-flow-col md:auto-rows-min md:grid-cols-12 md:gap-x-8 md:gap-y-16">
+            <!-- Image section -->
+            <div class="col-span-1 md:col-span-2 lg:col-start-1 lg:row-start-1">
+              <img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto">
+            </div>
+
+            <!-- Sitemap sections -->
+            <div class="col-span-6 mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-8 md:col-start-3 md:row-start-1 md:mt-0 lg:col-span-6 lg:col-start-2">
+              <div class="grid grid-cols-1 gap-y-12 sm:col-span-2 sm:grid-cols-2 sm:gap-x-8">
+                <div>
+                  <h3 class="text-sm font-medium text-gray-900">Products</h3>
+                  <ul role="list" class="mt-6 space-y-6">
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Bags</a>
+                    </li>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Tees</a>
+                    </li>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Objects</a>
+                    </li>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Home Goods</a>
+                    </li>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Accessories</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-900">Company</h3>
+                  <ul role="list" class="mt-6 space-y-6">
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Who we are</a>
+                    </li>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Sustainability</a>
+                    </li>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Press</a>
+                    </li>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Careers</a>
+                    </li>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Terms &amp; Conditions</a>
+                    </li>
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-500 hover:text-gray-600">Privacy</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-900">Customer Service</h3>
+                <ul role="list" class="mt-6 space-y-6">
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Contact</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Shipping</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Returns</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Warranty</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Secure Payments</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">FAQ</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#" class="text-gray-500 hover:text-gray-600">Find a store</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Newsletter section -->
+            <div class="mt-12 md:col-span-8 md:col-start-3 md:row-start-2 md:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1">
+              <h3 class="text-sm font-medium text-gray-900">Sign up for our newsletter</h3>
+              <p class="mt-6 text-sm text-gray-500">The latest deals and savings, sent to your inbox weekly.</p>
+              <form class="mt-2 flex sm:max-w-md">
+                <label for="email-address" class="sr-only">Email address</label>
+                <input id="email-address" type="text" autocomplete="email" required class="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                <div class="ml-4 flex-shrink-0">
+                  <button type="submit" class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Sign up</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-100 py-10 text-center">
+          <p class="text-sm text-gray-500">&copy; 2021 Your Company, Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+  </body>
+</html>
